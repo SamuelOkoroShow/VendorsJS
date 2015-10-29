@@ -4,7 +4,7 @@
 <head>
     <title>Vendor App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
+    <!-- FireBase -->
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     
     <!-- Angular + Anuglar Router -->
@@ -12,12 +12,18 @@
     <script src="js/angular-route.min.js"></script>
     
     
+   <!-- bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Main Styles -->
+     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <div ng-controller="mainCtrl" class="container">
         <h1>{{title}}</h1>
+        <div ng-repeat="item in dashboard">
+        <p>Item name is <span class="cyan">{{item.name}}</span></p>
+        </div>
     </div>
 
 
