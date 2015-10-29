@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="vendors">
 
 <head>
-    <title>Bootstrap 101 Template</title>
+    <title>Vendor App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     
+    <!-- Angular + Anuglar Router -->
     <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    
+    
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
-    <div class="container">
-
-        
+    <div ng-controller="mainCtrl" class="container">
+        <h1>{{title}}</h1>
     </div>
 
 
@@ -22,6 +25,8 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Firebase JS-->
     <script src="js/api.js"></script>
+    <!-- UI in Angular -->
+    <script src="js/ui.js"></script>
 </body>
 
 </html>
