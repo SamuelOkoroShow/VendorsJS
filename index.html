@@ -6,23 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- FireBase -->
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-    
+
     <!-- Angular + Anuglar Router -->
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.min.js"></script>
-    
-    
-   <!-- bootstrap -->
+
+
+    <!-- bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- Main Styles -->
-     <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <div ng-controller="mainCtrl" class="container">
-        <h1>{{title}}</h1>
-        <div ng-repeat="item in dashboard">
-        <p>Item name is <span class="cyan">{{item.name}}</span></p>
+
+        <div class="row">
+            <div ng-repeat="item in dashboard">
+                <div class="col-md-6">
+                    <div class="dashblocks">
+                        <p>Item name is <span class="cyan">{{item.name}}</span></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

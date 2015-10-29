@@ -1,3 +1,21 @@
+
 .cyan{
 color:darkcyan;
+}
+.dashblocks{
+background:#333333;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    
+    font-weight: 600;
+    width: auto;
+  line-height: 100px;
+
+    margin: 10px;
+}
+.dashblocks p{
+    vertical-align: middle;
+ 
+    
 }
