@@ -19,7 +19,22 @@ var dashboardTabs = [
     }
 ]
 
+//configures initail route
+App.config(function($routeProvider) {
+	$routeProvider.when('/', {
+       controller : 'homeCtrl',
+		templateUrl : 'partials/home.html'
+	});
+});
+
+
 App.controller('mainCtrl',
+    function ($scope) {
+
+        $scope.title = "Hello World";
+        $scope.dashboard = dashboardTabs;
+    });
+App.controller('homeCtrl',
     function ($scope) {
 
         $scope.title = "Hello World";

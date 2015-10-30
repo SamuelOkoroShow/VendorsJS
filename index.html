@@ -22,7 +22,7 @@
     <!-- Nav Start -->
   <div id="navbar" >
       <div class="nav-center">
-      <img src="img/logo.png" class="nav-logo" />
+      <a href="#/"><img src="img/logo.png" class="nav-logo" /></a>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Campaigns</a></li>
             <li><a href="#">Collections</a></li>
@@ -35,17 +35,7 @@
     
     <div ng-controller="mainCtrl" class="container">
 
-        <div class="row">
-            <div ng-repeat="item in dashboard">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="dashblocks" style="background-image: url('{{item.img}}')">
-                        <a href="#{{item.link}}" class="full">
-                        <p>{{item.name}}</p>
-                            </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+       <div ng-view></div>
     </div>
 
 
