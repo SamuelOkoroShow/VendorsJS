@@ -18,13 +18,13 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body ng-controller="mainCtrl">
     <!-- Nav Start -->
   <div id="navbar" >
       <div class="nav-center">
       <a href="#/"><img src="img/logo.png" class="nav-logo" /></a>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Campaigns</a></li>
+            <li><a href="#/campaigns">Campaigns</a></li>
             <li><a href="#">Collections</a></li>
             <li><a href="#">Inventory</a></li>
             <li><a href="#">Settings</a></li>
@@ -33,7 +33,7 @@
         </div>
     <!-- Nav End -->
     
-    <div ng-controller="mainCtrl" class="container">
+    <div class="container">
 
        <div ng-view></div>
     </div>
