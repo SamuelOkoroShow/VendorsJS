@@ -57,3 +57,21 @@ text-decoration: none;
 .right{
 float: left
 }
+.data{
+font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin: 7px;
+
+}
+.caption{
+font-size: 15px;
+}
+.budge_title{
+font-size: 15px;
+    text-align: center;
+
+}
+.labelsrow{
+margin-bottom: 10px;
+}

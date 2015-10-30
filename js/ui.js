@@ -50,7 +50,11 @@ App.controller('homeCtrl',
 
 App.controller('campCtrl',
     function ($scope) {
-        scope.amount = 0;
+       
+        $scope.errormargin = 20;
+        $scope.success = 20;
+        $scope.sweetspot = 20;
         $scope.company = "Google";
+        $scope.slogan = "Winning at Life";
         $scope.dashboard = dashboardTabs;
     });

@@ -1,12 +1,27 @@
 <div class='row'>
     <h2>{{company}}</h2>
+    <span class="label label-info caption">{{slogan}}</span>
+    <br/>
+    <br/>
 
-    <span class="label label-danger">Danger</span>
-    <p class="caption">{{slogan}}</p>
+    <h3 class="budge_title">Cap Your Week's Budget</h3>
+    
 </div>
 
-<div class="row data">${{amount}}</div>
+<div class="row data">$0{{amount}}</div>
+
+<div class="progress">
+        <div class="progress-bar progress-bar-success" style="width: {{amount/50}}%"><span class="sr-only">35% Complete (success)</span></div>
+        <div class="progress-bar progress-bar-warning" style="width: {{amount/20}}%"><span class="sr-only">20% Complete (warning)</span></div>
+        <div class="progress-bar progress-bar-danger" style="width: {{100 - ((7*amount)/100)}}%"><span class="sr-only">10% Complete (danger)</span></div>
+      </div>
+<div class="row labelsrow">
+<span class="label label-success">Purchases</span><br/>
+    <span class="label label-warning">Sweet Spot</span><br/>
+    <span class="label label-danger">Passes</span>
+</div>
+
 <div class="row">
-    <input type="range" ng-model="amount" />
-    <button class="btn btn-primary"> Save </button>
+    <input type="range" min="0" max="800" value="0" step="10" name="cash" ng-model="amount" />
+    <button class="btn btn-primary"> Save To Firebase </button>
 </div>
