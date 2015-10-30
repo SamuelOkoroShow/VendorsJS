@@ -1,18 +1,59 @@
+@font-face {
+    font-family: 'Satisfy';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Satisfy'), url(../fonts/Satisfy-Regular.ttf) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+body{
+background: url(../img/back.jpg);
+}
+.nav-logo{
+width:110px;
+    padding: 10px;
+}
+.nav-center{
+width: 700px;
+    left: 50%;
+    margin: auto;
+}
+#navbar{
+background: #333;
+}
+
 .cyan {
     color: darkcyan;
 }
-.dashblocks {
+a{
+color:white;
+}
+a:hover{
+text-decoration: none;
+    color:white;
+}
+a:visited{
+text-decoration: none;
+}
+.dashblocks{
     background: #333333;
     background-size: cover;
     color: white;
     text-align: center;
-    text-transform: uppercase;
     background-repeat: no-repeat;
-    font-weight: 600;
+    font-size: 2.2em;
     width: auto;
     line-height: 150px;
     margin: 7px;
+    border-radius: 5px;
 }
 .dashblocks p {
+    font-family: 'Satisfy';
     vertical-align: middle;
+}
+.bar {
+    height: 100%;
+    width: 40px;
+}
+.right{
+float: left
 }
