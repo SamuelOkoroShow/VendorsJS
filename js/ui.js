@@ -20,28 +20,20 @@ var dashboardTabs = [
 ]
 
 //configures initail route
-App.config(function ($routeProvider) {
-    $routeProvider.when('/', {
-        controller: 'homeCtrl',
-        templateUrl: 'partials/home.html'
-    });
+App.config(function($routeProvider) {
+	$routeProvider.when('/', {
+       controller : 'homeCtrl',
+		templateUrl : 'partials/home.html'
+	});
 });
 
 //configures challenge route
-App.config(function ($routeProvider) {
-    $routeProvider.when('/campaigns', {
-        controller: 'campCtrl',
-        templateUrl: 'partials/campaigns.html'
-    });
+App.config(function($routeProvider) {
+	$routeProvider.when('/campaigns', {
+       controller : 'campCtrl',
+		templateUrl : 'partials/campaigns.html'
+	});
 });
-
-App.directive("graph", function () {
-
-    return {
-        restirct: 'E',
-        template: "partials/svg-graph.html"
-    }
-})
 
 App.controller('mainCtrl',
     function ($scope) {
@@ -55,14 +47,21 @@ App.controller('homeCtrl',
         $scope.title = "Hello World";
         $scope.dashboard = dashboardTabs;
     });
+App.directive("graph", function () {
+
+    return {
+        restirct: 'E',
+        templateUrl: "partials/graph.html"
+    }
+});
 
 App.controller('campCtrl',
     function ($scope) {
-
+       
         $scope.errormargin = 20;
         $scope.success = 20;
         $scope.sweetspot = 20;
-        $scope.company = "Zappos";
+        $scope.company = "Google";
         $scope.slogan = "Winning at Life";
         $scope.dashboard = dashboardTabs;
     });

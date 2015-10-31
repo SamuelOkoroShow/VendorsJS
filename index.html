@@ -24,69 +24,32 @@
 
 </head>
 
+
 <body ng-controller="mainCtrl">
     <!-- Nav Start -->
-    <div id="navbar">
-        <div class="nav-center">
-            <a href="#/"><img src="img/logo.png" class="nav-logo" /></a>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/campaigns">Campaigns</a></li>
-                <li><a href="#">Collections</a></li>
-                <li><a href="#">Inventory</a></li>
-                <li><a href="#">Settings</a></li>
-            </ul>
+  <div id="navbar" >
+      <div class="nav-center">
+      <a href="#/"><img src="img/logo.png" class="nav-logo" /></a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/campaigns">Campaigns</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Inventory</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+          </div>
         </div>
-    </div>
     <!-- Nav End -->
-
+    
     <div class="container">
 
-        <!-- <div ng-view></div> -->
-        <div id="graph"></div>
+       <div ng-view></div>
     </div>
 
 
-    <script src="js/api.js"></script>
-    <!-- D3js-->
-    <script>
-        var purchases = [];
-        var cool = false;
-        var units = 60;
-
-        myDataRef.on("child_added", function(snapshot, prevChildKey) {
-            newPost = snapshot.val();
-            purchases.push(newPost.purchases);
-            if (newPost.id == units) {
-                cool = true;
-                log();
-            }
-
-        });
-
-        function log() {
-            console.log(purchases);
-
-              var dataset = purchases;
-        d3.select("#graph").selectAll("div")
-            .data(dataset)
-            .enter()
-            .append("div")
-            .attr("class", "bar")
-            .style("height", function(d) {
-                var barHeight = (d * 20)+5;
-           
-                return barHeight + "px";
-            });
-        }
-
-    </script>
-    <script type="text/javascript">
-     
-
-    </script>
-
     <!-- Firebase JS-->
-
+    <script src="js/api.js"></script>
+    <!-- D3 JS-->
+    <script src="js/graph.js"></script>
     <!-- UI in Angular -->
     <script src="js/ui.js"></script>
 </body>

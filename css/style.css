@@ -85,19 +85,12 @@ div.bar {
 }
 #graph {
     display: block;
+
+    text-align: center;
+    left:50%;
     margin: auto;
-    left: 50%;
-    height: 300px;
-    width: auto;
-    
+    height: 140px;
+    width: 500px;
     background: white;
-    border: 2px solid #999;
 }
-.barz {
-    margin-right: 5px;
-    display: inline;
-    height: 10px;
-    width: 20px;
-    background-color: teal;
-}
-#chart {}
+
