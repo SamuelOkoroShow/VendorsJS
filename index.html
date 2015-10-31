@@ -39,67 +39,36 @@
     <div class="container">
 
         <!-- <div ng-view></div> -->
-        <svg id="graph" width="1000" height="500"></svg>
+        <svg id="graph" width="600" height="500"></svg>
     </div>
 
 
     <script src="js/api.js"></script>
     <!-- D3js-->
     <script>
-       
+        var purchases = [];
+        var cool = false;
+
         myDataRef.on("child_added", function(snapshot, prevChildKey) {
             newPost = snapshot.val();
-            console.log(newPost);
+            purchases.push(newPost.purchases);
+            if (newPost.id == 20) {
+                cool = true;
+                log();
+            }
+
         });
-        
-        
 
-        var visual = d3.select("#graph"),
-            WIDTH = 550,
-            HEIGHT = 400,
-            MARGINS = {
-                top: 20,
-                right: 20,
-                bottom: 20,
-                left: 50
-            },
-            xScale = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]).domain([1, 105]),
-            yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([1, 105]),
-            xAxis = d3.svg.axis()
-            .scale(xScale),
+        function log() {
+            if (cool) {
+                console.log(purchases);
+            } else {
+                setTimeout(function() {
+                    log();
+                }, 3000);
+            }
+        }
 
-         yAxis = d3.svg.axis()
-            .scale(yScale)
-            .orient("left");
-
-
-        visual.append("svg:g")
-            .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
-            .call(xAxis);
-
-        visual.append("svg:g")
-            .call(yAxis);
-
-        
-        
-        visual.append("svg:g")
-    .attr("transform", "translate(" + (MARGINS.left) + ",0)")
-    .call(yAxis);
-        
-        var lineGen = d3.svg.line()
-  .x(function(d) {
-    return xScale(d.id);
-  })
-  .y(function(d) {
-    return yScale(d.purchases);
-  });
-    setTimeout(function(){    
-        visual.append('svg:path')
-  .attr('d', d3.svg.line(sampleData))
-  .attr('stroke', 'green')
-  .attr('stroke-width', 2)
-  .attr('fill', 'none');
-    }, 1000);
     </script>
 
     <!-- Firebase JS-->
