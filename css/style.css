@@ -50,6 +50,10 @@ text-decoration: none;
     font-family: 'Satisfy';
     vertical-align: middle;
 }
+.padded{
+margin: 20px;
+
+}
 .bar {
     height: 100%;
     width: 40px;

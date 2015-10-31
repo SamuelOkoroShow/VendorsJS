@@ -54,7 +54,7 @@ App.controller('campCtrl',
         $scope.errormargin = 20;
         $scope.success = 20;
         $scope.sweetspot = 20;
-        $scope.company = "Google";
+        $scope.company = "Zappos";
         $scope.slogan = "Winning at Life";
         $scope.dashboard = dashboardTabs;
     });
