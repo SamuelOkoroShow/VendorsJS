@@ -64,4 +64,10 @@ App.controller('campCtrl',
         $scope.company = "Google";
         $scope.slogan = "Winning at Life";
         $scope.dashboard = dashboardTabs;
+        $scope.save_val = 0;
+    
+   $scope.saveui = function(hi){
+       saveAPI(hi);
+    }
+    
     });
