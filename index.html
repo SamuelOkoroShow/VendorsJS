@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html ng-app="vendors">
+<html ng-app="vendors" lang="en">
 
 <head>
     <title>Vendor App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
     <!-- FireBase -->
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 
@@ -12,13 +14,14 @@
     <script src="js/angular-route.min.js"></script>
 
     <!-- Data Driven JavaScript -->
-    <script src="js/d3.min.js"></script>
+    <script src="js/d3.min.js" charset="utf-8"></script>
 
 
     <!-- bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- Main Styles -->
     <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body ng-controller="mainCtrl">
@@ -39,7 +42,7 @@
     <div class="container">
 
         <!-- <div ng-view></div> -->
-        <svg id="graph" width="600" height="500"></svg>
+        <div id="graph"></div>
     </div>
 
 
@@ -48,11 +51,12 @@
     <script>
         var purchases = [];
         var cool = false;
+        var units = 60;
 
         myDataRef.on("child_added", function(snapshot, prevChildKey) {
             newPost = snapshot.val();
             purchases.push(newPost.purchases);
-            if (newPost.id == 20) {
+            if (newPost.id == units) {
                 cool = true;
                 log();
             }
@@ -60,14 +64,24 @@
         });
 
         function log() {
-            if (cool) {
-                console.log(purchases);
-            } else {
-                setTimeout(function() {
-                    log();
-                }, 3000);
-            }
+            console.log(purchases);
+
+              var dataset = purchases;
+        d3.select("#graph").selectAll("div")
+            .data(dataset)
+            .enter()
+            .append("div")
+            .attr("class", "bar")
+            .style("height", function(d) {
+                var barHeight = (d * 20)+5;
+           
+                return barHeight + "px";
+            });
         }
+
+    </script>
+    <script type="text/javascript">
+     
 
     </script>
 

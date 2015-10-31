@@ -5,36 +5,35 @@
     src: local('Satisfy'), url(../fonts/Satisfy-Regular.ttf) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
-body{
-background: url(../img/back.jpg);
+body {
+    background: url(../img/back.jpg);
 }
-.nav-logo{
-width:110px;
+.nav-logo {
+    width: 110px;
     padding: 10px;
 }
-.nav-center{
-width: 700px;
+.nav-center {
+    width: 700px;
     left: 50%;
     margin: auto;
 }
-#navbar{
-background: #333;
+#navbar {
+    background: #333;
 }
-
 .cyan {
     color: darkcyan;
 }
-a{
-color:white;
+a {
+    color: white;
 }
-a:hover{
-text-decoration: none;
-    color:white;
+a:hover {
+    text-decoration: none;
+    color: white;
 }
-a:visited{
-text-decoration: none;
+a:visited {
+    text-decoration: none;
 }
-.dashblocks{
+.dashblocks {
     background: #333333;
     background-size: cover;
     color: white;
@@ -50,35 +49,55 @@ text-decoration: none;
     font-family: 'Satisfy';
     vertical-align: middle;
 }
-.padded{
-margin: 20px;
-
+.padded {
+    margin: 20px;
 }
 .bar {
     height: 100%;
     width: 40px;
 }
-.right{
-float: left
+.right {
+    float: left
 }
-.data{
-font-size: 20px;
+.data {
+    font-size: 20px;
     font-weight: 600;
     text-align: center;
     margin: 7px;
-
 }
-.caption{
-font-size: 15px;
+.caption {
+    font-size: 15px;
 }
-.budge_title{
-font-size: 15px;
+.budge_title {
+    font-size: 15px;
     text-align: center;
-
 }
-.labelsrow{
-margin-bottom: 10px;
+.labelsrow {
+    margin-bottom: 10px;
 }
-#graph{
-margin: 10px;
+div.bar {
+    display: inline-block;
+    width: 10px;
+    height: 75px;
+    /* Gets overriden by D3-assigned height below */
+    margin-right: 3px;
+    background-color: teal;
 }
+#graph {
+    display: block;
+    margin: auto;
+    left: 50%;
+    height: 300px;
+    width: auto;
+    
+    background: white;
+    border: 2px solid #999;
+}
+.barz {
+    margin-right: 5px;
+    display: inline;
+    height: 10px;
+    width: 20px;
+    background-color: teal;
+}
+#chart {}
