@@ -2,15 +2,25 @@ var myDataRef = new Firebase('https://resplendent-inferno-1454.firebaseio.com/Co
 
 var myBudgetRef = new Firebase('https://resplendent-inferno-1454.firebaseio.com/Companies/Zappos/Campaigns/Cloths/');
 
-function saveAPI(data){
+myDataRef.on("child_added", function (snapshot, prevChildKey) {
+    newPost = snapshot.val();
+    purchases.push(newPost.purchases);
+    if (newPost.id == units) {
+        cool = true;
+        log();
+    }
 
-myBudgetRef.update({
-  "Budget": data
 });
-    
-    myBudgetRef.on("child_changed", function(snapshot) {
-  var changedPost = snapshot.val();
-  alert("Success!");
-});
-    
+
+function saveAPI(data) {
+
+    myBudgetRef.update({
+        "Budget": data
+    });
+
+    myBudgetRef.on("child_changed", function (snapshot) {
+        var changedPost = snapshot.val();
+        alert("Success!");
+    });
+
 }

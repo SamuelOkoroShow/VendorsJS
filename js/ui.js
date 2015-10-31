@@ -65,6 +65,7 @@ App.controller('campCtrl',
         $scope.slogan = "Winning at Life";
         $scope.dashboard = dashboardTabs;
         $scope.save_val = 0;
+setTimeout(function(){log()},1000);
     
    $scope.saveui = function(hi){
        saveAPI(hi);

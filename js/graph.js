@@ -1,19 +1,11 @@
  var purchases = [];
-        var cool = false;
-        var units = 60;
 
-        myDataRef.on("child_added", function(snapshot, prevChildKey) {
-            newPost = snapshot.val();
-            purchases.push(newPost.purchases);
-            if (newPost.id == units) {
-                cool = true;
-                log();
-            }
+        var units = 50;
 
-        });
+    
 
         function log() {
-            console.log(purchases);
+
 
               var dataset = purchases;
         d3.select("#graph").selectAll("div")
@@ -26,4 +18,5 @@
            
                 return barHeight + "px";
             });
+            console.log('done');
         }
